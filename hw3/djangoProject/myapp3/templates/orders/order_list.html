@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Order List{% endblock %}
+
+{% block content %}
+    <h1>Заказы клиента</h1>
+
+    <h2>За последние 7 дней</h2>
+    <ul>
+        {% for order in orders_last_week %}
+            <li>{{ order.product.name }} ({{ order.order_date }})</li>
+        {% empty %}
+            <li>Нет заказов</li>
+        {% endfor %}
+    </ul>
+
+    <h2>За последние 30 дней</h2>
+    <ul>
+        {% for order in orders_last_month %}
+            <li>{{ order.product.name }} ({{ order.order_date }})</li>
+        {% empty %}
+            <li>Нет заказов</li>
+        {% endfor %}
+    </ul>
+
+    <h2>За последние 365 дней</h2>
+    <ul>
+        {% for order in orders_last_year %}
+            <li>{{ order.product.name }} ({{ order.order_date }})</li>
+        {% empty %}
+            <li>Нет заказов</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Уникальные товары</h2>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }}</li>
+        {% empty %}
+            <li>Нет товаров</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

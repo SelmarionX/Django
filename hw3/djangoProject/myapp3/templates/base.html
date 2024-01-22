@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Shop{% endblock %}</title>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+{#            <li><a href="/">Home</a></li>#}
+{#            <li><a href="/order_list">Order List</a></li>#}
+        </ul>
+    </nav>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <p>GB &copy; Домашнее задание 3</p>
+</footer>
+</body>
+</html>
